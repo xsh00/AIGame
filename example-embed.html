@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>游戏嵌入示例</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', 'Microsoft YaHei', sans-serif;
+      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+      font-size: 2.5rem;
+    }
+
+    .description {
+      text-align: center;
+      color: #666;
+      margin-bottom: 40px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .game-wrapper {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 50px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 40px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 900px;
+      border: none;
+      border-radius: 10px;
+    }
+
+    .info-box {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .info-box h2 {
+      color: #667eea;
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+    }
+
+    .info-box p {
+      color: #666;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+
+    .code-block {
+      background: #f5f5f5;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      margin: 15px 0;
+      overflow-x: auto;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+    }
+
+    .highlight {
+      color: #667eea;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      iframe {
+        height: 700px;
+      }
+
+      .info-box {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎮 记忆翻牌游戏 - iframe 嵌入示例</h1>
+    
+    <div class="description">
+      <p>这个页面展示了如何使用 iframe 将游戏嵌入到其他网页中</p>
+      <p>下方是实际运行的游戏（需要先执行 <span class="highlight">npm run build</span>）</p>
+    </div>
+
+    <div class="game-wrapper">
+      <iframe src="./dist/index.html"></iframe>
+    </div>
+
+    <div class="info-box">
+      <h2>📝 如何嵌入到您的网页</h2>
+      <p>只需要在您的 HTML 中添加以下代码：</p>
+      
+      <div class="code-block">
+&lt;iframe 
+  src="path/to/dist/index.html" 
+  width="800" 
+  height="900" 
+  frameborder="0"
+  style="border: none;"&gt;
+&lt;/iframe&gt;
+      </div>
+
+      <p><strong>步骤：</strong></p>
+      <ol style="margin-left: 20px; line-height: 2;">
+        <li>运行 <code class="highlight">npm run build</code> 构建项目</li>
+        <li>将 <code class="highlight">dist</code> 目录上传到您的服务器</li>
+        <li>在需要嵌入游戏的页面使用上述 iframe 代码</li>
+        <li>修改 <code>src</code> 属性指向正确的路径</li>
+      </ol>
+
+      <p style="margin-top: 20px;">
+        <strong>💡 提示：</strong> 如果要在本地测试 iframe 嵌入，
+        需要先构建项目（<code class="highlight">npm run build</code>），
+        然后使用本地服务器打开此 HTML 文件（不能直接双击打开）。
+      </p>
+    </div>
+  </div>
+</body>
+</html>
+
