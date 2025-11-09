@@ -2,12 +2,11 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
+  base: './',  // 生成相对路径（必须在顶层）
   plugins: [vue()],
   build: {
     // 输出目录
     outDir: 'dist',
-    // 生成相对路径
-    base: './',
     // 内联所有资源
     assetsInlineLimit: 100000000,
     rollupOptions: {

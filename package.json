@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "build:single": "vite build --config vite.config.single.js",
+    "build:standalone": "npm run build:single && node build-inline.js",
     "preview": "vite preview"
   },
   "dependencies": {
